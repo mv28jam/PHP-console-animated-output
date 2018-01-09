@@ -22,6 +22,8 @@ class ConsoleAnimatedOutput extends stdClass {
     const CURSOR_BEGIN = "[0G";
     const CURSOR_UP = "[1A";
     const BACKSPACE = "[D";
+    const COLOR_START = "[0;%m";
+    const COLOR_END = "[0m";
     
     /**@var array $simple_spin*/
     protected $simple_spin=['|', '/', '-', '\\'];
@@ -123,7 +125,19 @@ class ConsoleAnimatedOutput extends stdClass {
             $this->spin_time = microtime(true)+$delay;
             $this->echoSpiner();
         }
-        
+    }
+    
+    /**
+     * @param string $line
+     * @param int $color
+     * @return void
+     * echo colored console output
+     */
+    public function echoColor(string $line, int $color=0)
+    {
+        echo chr(27) .str_replace('%', $color, self::COLOR_START);
+        echo $line;
+        echo chr(27) .self::COLOR_END;
     }
     
    
