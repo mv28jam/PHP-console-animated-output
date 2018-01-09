@@ -32,7 +32,7 @@ class ConsoleAnimatedOutput extends stdClass {
     /**
      * @param void
      * @return self
-     * @thorows Exception
+     * @throws Exception
      */
     public function __construct()
     {
