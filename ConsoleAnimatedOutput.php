@@ -100,6 +100,7 @@ class ConsoleAnimatedOutput extends stdClass {
     public function echoSpiner()
     {
         $elem=current($this->simple_spin);
+        //if out of array rewind
         if(!$elem){
             reset($this->simple_spin);
             $elem=current($this->simple_spin);
