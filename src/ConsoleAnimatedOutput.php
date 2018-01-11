@@ -7,6 +7,8 @@
  * Multiple lines utput - like table draw.
  */
 
+namespace ConsoleAnimated;
+
 /**
  * Description of ConsoleAnimatedOutput
  *
