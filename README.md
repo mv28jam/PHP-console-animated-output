@@ -5,7 +5,7 @@ php console output
 - active lines
 
 ## Composer 
-"repositories": [
+    "repositories": [
         {
             "type": "vcs",
             "url":  "git@github.com:mv28jam/console_animated_output.git"
