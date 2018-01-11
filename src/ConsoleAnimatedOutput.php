@@ -47,11 +47,10 @@ class ConsoleAnimatedOutput extends \stdClass {
     
     /**
      * @param string $line line to output
-     * @param int $skip skip delete lines up
      * @return bool false on newline in input
      * echo one line // delete progress for example
      */
-    public function echoLine(string $line, $skip=0):bool
+    public function echoLine(string $line):bool
     {
         //trim ending new line 
         $line=rtrim ($line, "\n" );
@@ -131,7 +130,7 @@ class ConsoleAnimatedOutput extends \stdClass {
     
     /**
      * @param string $line
-     * @param int $color
+     * @param int $color 
      * @return void
      * echo colored console output
      */
