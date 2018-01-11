@@ -15,7 +15,7 @@ namespace ConsoleAnimated;
  * @author mv28jam <mv28jam@yandex.ru>
  */
 
-class ConsoleAnimatedOutput extends stdClass {
+class ConsoleAnimatedOutput extends \stdClass {
     /**
      * @link www.inwap.com/pdp10/ansicode.txt
      * console commands
