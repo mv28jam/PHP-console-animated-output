@@ -84,9 +84,9 @@ class ConsoleAnimatedOutput extends \stdClass {
                  echo chr(27) .self::DELETE_LINE;
              }
         }
-        for($i=0; $i<$cnt; $i++){
+        foreach($lines as $line){
             //remove new lines from output
-             echo str_replace("\n", ' ', $lines[$i])."\n";
+             echo str_replace("\n", ' ', $line)."\n";
         }
         for($i=0; $i<$skip; $i++){
              echo "\n";
