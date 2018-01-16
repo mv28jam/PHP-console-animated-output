@@ -148,7 +148,7 @@ class ConsoleAnimatedOutput extends \stdClass {
      */
     public function cursorUp(int $step=1)
     {
-        for($i=0; $i < $tep; $i++){
+        for($i=0; $i < $step; $i++){
             echo chr(27) .self::CURSOR_UP;
         }
     }
