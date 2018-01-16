@@ -141,5 +141,16 @@ class ConsoleAnimatedOutput extends \stdClass {
         echo chr(27) .self::COLOR_END;
     }
     
+    /**
+     * @param int $step how many lines up
+     * @return void
+     * cursor up
+     */
+    public function cursorUp(int $step=1)
+    {
+        for($i=0; $i < $tep; $i++){
+            echo chr(27) .self::CURSOR_UP;
+        }
+    }
    
 }
