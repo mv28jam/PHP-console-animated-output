@@ -78,11 +78,13 @@ class ConsoleAnimatedOutput extends \stdClass {
         //lines to print
         $cnt = count($lines);
         //
-        for($i=0; $i<$cnt+$skip; $i++){
-             echo chr(27) .self::CURSOR_UP;
-             if($i >= $skip){
-                 echo chr(27) .self::DELETE_LINE;
-             }
+         if($skip >= 0){
+            for($i=0; $i<$cnt+$skip; $i++){
+                 echo chr(27) .self::CURSOR_UP;
+                 if($i >= $skip){
+                     echo chr(27) .self::DELETE_LINE;
+                 }
+            }
         }
         foreach($lines as $line){
             //remove new lines from output
