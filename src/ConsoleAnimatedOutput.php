@@ -154,5 +154,19 @@ class ConsoleAnimatedOutput extends \stdClass {
             echo chr(27) .self::CURSOR_UP;
         }
     }
+    
+    /**
+     * @param int $step how many new lines 
+     * @return void
+     * new empty line
+     */
+    public function echoEmptyLine(int $step=1)
+    {
+        for($i=0; $i < $step; $i++){
+            echo "\n";
+        }
+    }
+    
+    
    
 }
