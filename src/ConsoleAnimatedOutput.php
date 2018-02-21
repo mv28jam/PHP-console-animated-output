@@ -27,6 +27,8 @@ class ConsoleAnimatedOutput extends \stdClass {
     const COLOR_START = "[0;%m";
     const COLOR_END = "[0m";
     
+    /**@var int command symbol */
+    protected $symbol=27;
     /**@var array $simple_spin*/
     protected $simple_spin=['|', '/', '-', '\\'];
     /**@var array $simple_time spin move time + delay*/
@@ -59,8 +61,8 @@ class ConsoleAnimatedOutput extends \stdClass {
             return false;
         }
         //echo actions
-        echo chr(27) .self::CURSOR_BEGIN;
-        echo chr(27) .self::DELETE_LINE;
+        echo chr($this->symbol) .self::CURSOR_BEGIN;
+        echo chr($this->symbol) .self::DELETE_LINE;
         echo $line;
         //
         return true;
@@ -80,9 +82,9 @@ class ConsoleAnimatedOutput extends \stdClass {
         //
          if($skip >= 0){
             for($i=0; $i<$cnt+$skip; $i++){
-                 echo chr(27) .self::CURSOR_UP;
+                 echo chr($this->symbol) .self::CURSOR_UP;
                  if($i >= $skip){
-                     echo chr(27) .self::DELETE_LINE;
+                     echo chr($this->symbol) .self::DELETE_LINE;
                  }
             }
         }
@@ -114,7 +116,7 @@ class ConsoleAnimatedOutput extends \stdClass {
         }
         //
         echo $elem;
-        echo chr(27) .self::BACKSPACE;
+        echo chr($this->symbol) .self::BACKSPACE;
     }
     
      /**
@@ -138,9 +140,9 @@ class ConsoleAnimatedOutput extends \stdClass {
      */
     public function echoColor(string $line, int $color=0)
     {
-        echo chr(27) .str_replace('%', $color, self::COLOR_START);
+        echo chr($this->symbol) .str_replace('%', $color, self::COLOR_START);
         echo $line;
-        echo chr(27) .self::COLOR_END;
+        echo chr($this->symbol) .self::COLOR_END;
     }
     
     /**
@@ -151,7 +153,7 @@ class ConsoleAnimatedOutput extends \stdClass {
     public function cursorUp(int $step=1)
     {
         for($i=0; $i < $step; $i++){
-            echo chr(27) .self::CURSOR_UP;
+            echo chr($this->symbol) .self::CURSOR_UP;
         }
     }
     
