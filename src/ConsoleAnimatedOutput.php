@@ -159,6 +159,23 @@ class ConsoleAnimatedOutput extends \stdClass {
     }
     
     /**
+     * Delete line
+     */
+    public function deleteLine()
+    {
+        echo chr($this->symbol) .self::DELETE_LINE;
+    }
+    
+    /**
+     * @see self::echoEmptyLine
+     * @param int $step
+     */
+    public function cursorDown(int $step=1)
+    {
+        $this->echoEmptyLine($step);
+    }
+    
+    /**
      * @param int $step how many new lines 
      * @return void
      * new empty line
