@@ -10,7 +10,8 @@
 namespace ConsoleAnimated;
 
 /**
- * Description of ConsoleAnimatedOutput
+ * Changing of console output multi or one line
+ * Show one line progress indicator
  *
  * @author mv28jam <mv28jam@yandex.ru>
  */
